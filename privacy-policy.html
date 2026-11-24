@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Hotspot Monitor</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --border-color: #334155;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 36px 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-top: 0;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-top: 28px;
+        }
+        p, li {
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+        .highlight {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            border-radius: 4px;
+            margin: 16px 0;
+        }
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Privacy Policy</h1>
+    <div class="last-updated">Last Updated: November 24, 2026</div>
+
+    <p>This Privacy Policy explains how <strong>Hotspot Monitor</strong> ("we", "our", or "the App") handles information when you use our mobile application.</p>
+
+    <div class="highlight">
+        <strong>Summary:</strong> Hotspot Monitor is designed with privacy as a foundational principle. All network traffic telemetry, hotspot device tracking, and data usage statistics are processed and stored <strong>locally on your device</strong>. We do not operate external analytics servers, and we never collect, upload, or sell your personal data or browsing activity.
+    </div>
+
+    <h2>1. Information Processed Locally on Your Device</h2>
+    <p>To monitor your portable Wi-Fi hotspot and display real-time bandwidth usage, the App processes the following diagnostic data on-device:</p>
+    <ul>
+        <li><strong>Connected Device Identifiers:</strong> IP addresses, MAC addresses, and hostnames of devices connected to your mobile hotspot (to distinguish connected clients and allow device-level tracking).</li>
+        <li><strong>Data Transfer Metrics:</strong> Total uploaded and downloaded bytes (RX/TX deltas) and connection durations.</li>
+        <li><strong>Network Interface Statistics:</strong> Data counters from system APIs (<code>NetworkStatsManager</code>) to calculate overall tethering usage and subtract local phone app usage.</li>
+        <li><strong>Root Telemetry (Optional):</strong> If running on a rooted device with superuser permission granted, low-level socket counters and domain headers (DNS/SNI) are inspected purely in memory to show per-device bandwidth and visited domain summaries.</li>
+    </ul>
+    <p>None of this telemetry is ever transmitted to any external server or third party. All logs remain in your device's private local database.</p>
+
+    <h2>2. Android Permissions Used</h2>
+    <ul>
+        <li><strong>FOREGROUND_SERVICE (connectedDevice / dataSync):</strong> Allows the App to continuously monitor your active hotspot and alert you when configured data quotas are reached, even when your screen is turned off or another app is open.</li>
+        <li><strong>PACKAGE_USAGE_STATS (Usage Access):</strong> Used exclusively to query non-tethering local app data transfers so the app can isolate and subtract host phone consumption from hotspot totals.</li>
+        <li><strong>POST_NOTIFICATIONS:</strong> Used to display active monitoring notifications and alert you when your hotspot quota or device limits are exceeded.</li>
+        <li><strong>ACCESS_NETWORK_STATE / ACCESS_WIFI_STATE:</strong> Used to detect whether the Wi-Fi hotspot is currently enabled or disabled.</li>
+    </ul>
+
+    <h2>3. Advertising & Third-Party SDKs</h2>
+    <p>Hotspot Monitor includes advertisements provided by <strong>Google AdMob</strong> (Google Mobile Ads SDK) to support ongoing development.</p>
+    <p>Google AdMob may collect and process certain device information in accordance with Google's Privacy Policy, including:</p>
+    <ul>
+        <li>Advertising identifiers (e.g., Google Advertising ID).</li>
+        <li>Device identifiers, IP address, and network connection type.</li>
+        <li>Diagnostic and crash performance logs.</li>
+    </ul>
+    <p>For more information on how Google collects and uses information for advertising, please review <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Advertising Privacy &amp; Terms</a>.</p>
+
+    <h2>4. Data Retention and Deletion</h2>
+    <p>All connection history, quotas, and bandwidth logs are stored locally in an SQLite database on your device. You can clear this data at any time directly within the App settings, or by clearing the App's storage via Android Settings, or by uninstalling the App.</p>
+
+    <h2>5. Children's Privacy</h2>
+    <p>The App is not directed to individuals under the age of 13, and we do not knowingly collect personal information from children.</p>
+
+    <h2>6. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date.</p>
+
+    <h2>7. Contact Us</h2>
+    <p>If you have any questions or feedback regarding this Privacy Policy, please contact us at:</p>
+    <p>Website: <a href="https://justakhi.github.io/" target="_blank" rel="noopener">https://justakhi.github.io/</a></p>
+</div>
+</body>
+</html>
